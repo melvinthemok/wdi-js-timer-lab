@@ -4,8 +4,8 @@ var seconds = 0
 var intervalID
 
 function updateTime () {
-  seconds = Number(seconds) + 0.1
-  seconds = seconds.toFixed(1)
+  seconds = Number(seconds) + 0.005
+  seconds = seconds.toFixed(3)
   $('#timer').html('Time elapsed: ' + seconds + ' seconds')
 }
 
@@ -29,14 +29,14 @@ $('#reset').on('click', function () {
 
 $('#start').on('click', function () {
   clearInterval(intervalID)
-  intervalID = setInterval(updateTime, 100)
+  intervalID = setInterval(updateTime, 5)
 })
 
 $('#pause').on('click', function () {
   clearInterval(intervalID)
 })
-//
-// //bonus implementation
+
+//bonus implementation
 //
 // var timer = {
 //   seconds: 0,
@@ -45,7 +45,7 @@ $('#pause').on('click', function () {
 //   updateTime: function () {
 //     timer.seconds = Number(timer.seconds) + 0.1
 //     timer.seconds = timer.seconds.toFixed(1)
-//     $('#timer').html('Time elapsed: ' + timer.seconds + ' seconds')
+//     $('#timer').html('Time elapsed: ' + timer.seconds + ' seconds'),
 //   }
-//
+// //can add function incorporating event handlers
 // }
